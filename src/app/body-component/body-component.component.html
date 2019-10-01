@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="container">
+    <!-- <table>
+      <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>language</th>
+      </tr>
+
+      <tr *ngFor="let film of films">
+        <td>{{ film.id }}</td>
+        <td>{{ film.title }}</td>
+        <td>{{ film.original_language }}</td>
+      </tr>
+    </table> -->
+
+    <!-- https://image.tmdb.org/t/p/w342/{{film.poster_path}}
+    assets/images/nofilm.jpg -->
+
+    <!-- per i film -->
+    <div class="movie col-md-3" *ngFor="let film of films">
+      <img class="copertina" src="{{ controlImage(film.poster_path) }}">
+      <h4 class="mt-4">Titolo: <span>{{ film.title }}</span></h4>
+      <h4>Titolo originale: <span>{{ film.original_title }}</span></h4>
+      <h4>Tipo: <span>Film</span></h4>
+      <h4 class="language" *ngIf="film.original_language == 'en'">Lingua: <span><img class="bandiera" src="assets/images/en.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="film.original_language == 'fr'">Lingua: <span><img class="bandiera" src="assets/images/fr.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="film.original_language == 'it'">Lingua: <span><img class="bandiera" src="assets/images/it.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="film.original_language != 'en' && film.original_language != 'fr' && film.original_language != 'it' ">Lingua: <span>{{ film.original_language }}</span></h4>
+      <h4>Voto:
+        <span class="vote">{{film.vote_average}}</span>
+        <span class="stelline ml-1">
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(film.vote_average) >= 1}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(film.vote_average) >= 2}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(film.vote_average) >= 3}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(film.vote_average) >= 4}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(film.vote_average) >= 5}"></i>
+        </span>
+      </h4>
+    </div>
+
+
+    <!-- per le serie tv -->
+    <div class="movie col-md-3" *ngFor="let singleserie of serie">
+      <img class="copertina" src="{{ controlImage(singleserie.poster_path) }}">
+      <h4 class="mt-4">Titolo: <span>{{ singleserie.name }}</span></h4>
+      <h4>Titolo originale: <span>{{ singleserie.original_name }}</span></h4>
+      <h4>Tipo: <span>Serie Tv</span></h4>
+      <h4 class="language" *ngIf="singleserie.original_language == 'en'">Lingua: <span><img class="bandiera" src="assets/images/en.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="singleserie.original_language == 'fr'">Lingua: <span><img class="bandiera" src="assets/images/fr.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="singleserie.original_language == 'it'">Lingua: <span><img class="bandiera" src="assets/images/it.png" alt=""></span></h4>
+      <h4 class="language" *ngIf="singleserie.original_language != 'en' && singleserie.original_language != 'fr' && singleserie.original_language != 'it' ">Lingua: <span>{{ singleserie.original_language }}</span></h4>
+      <h4>Voto:
+        <span class="vote">{{singleserie.vote_average}}</span>
+        <span class="stelline ml-1">
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(singleserie.vote_average) >= 1}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(singleserie.vote_average) >= 2}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(singleserie.vote_average) >= 3}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(singleserie.vote_average) >= 4}"></i>
+          <i class="fas fa-star" [ngClass]="{yellow: calcVote(singleserie.vote_average) >= 5}"></i>
+        </span>
+      </h4>
+    </div>
+
+  </div>
+</div>

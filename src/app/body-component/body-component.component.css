@@ -1,0 +1,85 @@
+.container-fluid{
+  background-color: #1a1f28;
+  padding: 0;
+}
+.container{
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.col-md-3{
+  max-width: 23%;
+}
+/* per le card film */
+.movie{
+  margin-top: 20px;
+  /* background-color: white; */
+  margin-right: 29px;
+  height: 350px;
+  position: relative;
+}
+.movie:nth-child(4n){
+  margin-right: 0;
+}
+/* per i campi h4 del template  */
+h4{
+  color: #c3c6cc;
+  font-size: 14px;
+  padding: 2px 5px;
+}
+/* per le immagini di copertina */
+img.copertina{
+  width: 100%;
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* quando passo il mouse sopra */
+img.copertina:hover{
+  transition: 0.7s;
+  opacity: 0;
+}
+/* per le bandierine */
+img.bandiera{
+  width: 15px;
+  height: 15px;
+}
+
+/* per colorare le stelline di giallo */
+.yellow{
+  color: yellow;
+}
+.grey{
+  color: #c3c6cc;
+}
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .col-md-3{
+    max-width: 30%;
+    margin: 20px 4.1%;
+  }
+  .movie:nth-child(4n){
+    margin-right: auto;
+  }
+}
+@media (max-width: 991.98px) {
+  .col-md-3{
+    max-width: 30%;
+    margin: 20px 4.1%;
+  }
+  .movie:nth-child(4n){
+    margin-right: auto;
+  }
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .col-md-3{
+    max-width: 90%;
+    margin: 20px auto;
+  }
+  .movie:nth-child(4n){
+    margin-right: auto;
+  }
+}

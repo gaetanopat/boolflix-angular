@@ -1,0 +1,18 @@
+<app-header-component (goToParent)="getOutputVal($event)"></app-header-component>
+<app-body-component [films]="lstfilms" [serie]="lstserie"></app-body-component>
+<!-- (goToParent)="getOutputVal($event)" mi permette di inviare all'app component il film cercato -->
+<!-- [films]="lstfilms" e [serie]="lstserie" mi permettono di inviare al body-component la lista del film e delle serie tv -->
+
+<!-- <table>
+  <tr>
+    <th>id</th>
+    <th>title</th>
+    <th>language</th>
+  </tr>
+
+  <tr *ngFor="let singleserie of lstserie">
+    <td>{{ singleserie.id }}</td>
+    <td>{{ singleserie.name }}</td>
+    <td>{{ singleserie.original_language }}</td>
+  </tr>
+</table> -->
